@@ -1,0 +1,50 @@
+﻿15 Heroes (14 cards each )(each Hero has 1 rare, 3 uncommons, 5 of one common, and 5 of another common)
+ Black Widow - (1 Silent Sniper, 3 Covert Operation, 5 Dangerous Rescue, 5 Mission Accomplished)
+ Captain America - (1 A Day Unlike Any Other, 3 Diving Block, 5 Avengers Assemble!, 5 Perfect Teamwork)
+ Cyclops - (1 X-Men United, 3 Unending Energy, 5 Optic Blast, 5 Determination)
+ Deadpool - (1 Random Acts of Unkindness; 3 Hey, Can I Get a Do Over; 5 Oddball; 5 Here, Hold This For a Second)
+ Emma Frost - (1 Diamond Form, 3 Psychic Link, 5 Mental Discipline, 5 Shadowed Thoughts)
+ Gambit - (1 High Stakes Jackpot, 3 Hypnotic Charm, 5 Card Shark, 5 Stack the Deck)
+ Hawkeye - (1 Impossible Trick Shot, 3 Covering Fire, 5 Quick Draw, 5 Team Player)
+ Hulk - (1 Hulk Smash, 3 Crazed Rampage, 5 Unstoppable Hulk, 5 Growing Anger)
+ Iron Man - (1 Quantum Breakthrough, 3 Arc Reactor, 5 Repulsor Rays, 5 Endless Invention)
+ Nick Fury - (1 Pure Fury, 3 Legendary Commander, 5 Battlefield Promotion, 5 High-Tech Weaponry)
+ Rogue - (1 Steal Abilities, 3 Copy Powers, 5 Borrowed Brawn, 5 Energy Drain)
+ Spider-Man - (1 The Amazing Spider Man, 3 Web Shooters, 5 Great Responsibility, 5 Astonishing Strength)
+ Storm - (1 Tidal Wave, 3 Spinning Cyclone, 5 Lightning Bolt, 5 Gathering Stormclouds)
+ Thor - (1 God of Thunder, 3 Call Lightning, 5 Surge of Power, 5 Odinson)
+ Wolverine - (1 Berserker Rage, 3 Frenzied Slashing, 5 Healing Factor, 5 Keen Senses)
+40 S.H.I.E.L.D. Agents
+20 S.H.I.E.L.D. Troopers
+30 S.H.I.E.L.D. Officers
+4 Masterminds (5 cards each)
+ Dr. Doom - (1 Dark Technology, 1 Monarch's Decree, 1 Secrets of Time Travel, 1 Treasures of Latveria)
+ Loki - (1 Cruel Ruler, 1 Maniacal Tyrant, 1 Vanishing Illusions, 1 Whispers and Lies)
+ Magneto - (1 Bitter Captor, 1 Crushing Shockwave, 1 Electromagnetic Bubble, 1 Xavier's Nemesis)
+ Red Skull - (1 Endless Resources, 1 HYDRA Conspiracy, 1 Negablast Grenades, 1 Ruthless Dictator)
+7 Villain Groups (8 cards each)
+ Brotherhood - (2 Blob, 2 Juggernaut, 2 Mystique, 2 Sabretooth)
+ Enemies of Asgard - (1 Destroyer, 2 Enchantress, 3 Frost Giant, 2 Ymir Frost Giant King)
+ HYDRA - (3 Endless Armies of HYDRA, 3 HYDRA Kidnappers, 1 Supreme HYDRA, 1 Viper)
+ Masters of Evil - (2 Baron Zemo, 2 Melter, 2 Ultron, 2 Whirlwind)
+ Radiation - (2 Abomination, 2 The Leader, 2 Maestro, 2 Zzzax)
+ Skrulls - (1 Paibok the Power Skrull, 1 Skrull Queen Veranke, 3 Skrull Shapeshifters, 3 Super-Skrull)
+ Spider Foes - (2 Doctor Octopus, 2 Green Goblin, 2 The Lizard, 2 Venom)
+4 Henchmen Villain Groups (10 cards each)
+ Doombot Legion
+ Hand Ninjas
+ Savage Land Mutates
+ Sentinels
+8 Schemes (8 cards)
+ The Legacy Virus
+ Midtown Bank Robbery
+ Negative Zone Prison Breakout
+ Portals to the Dark Dimension
+ Replace Earth's Leaders with Killbots
+ Secret Invasion of the Skrull Shapeshifters
+ Super Hero Civil War
+ Unleash the Power of the Cosmic Cube
+11 Scheme Twists
+5 Master Strikes
+30 Bystanders
+30 Wounds

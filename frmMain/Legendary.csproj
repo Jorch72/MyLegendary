@@ -1,0 +1,652 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AF0DC994-512D-404F-88AB-3DEB47B6697F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Legendary</RootNamespace>
+    <AssemblyName>Legendary</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\clsCard.cs" />
+    <Compile Include="Classes\clsGame.cs" />
+    <Compile Include="Classes\clsItem.cs" />
+    <Compile Include="Classes\clsPlayer.cs" />
+    <Compile Include="Classes\clsScripting.cs" />
+    <Compile Include="Classes\clsZone.cs" />
+    <Compile Include="Classes\clsZones.cs" />
+    <Compile Include="Forms\frmDebug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDebug.Designer.cs">
+      <DependentUpon>frmDebug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmGame.Designer.cs">
+      <DependentUpon>frmGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmNewGame1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmNewGame1.Designer.cs">
+      <DependentUpon>FrmNewGame1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSplash.Designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmDebug.resx">
+      <DependentUpon>frmDebug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmGame.resx">
+      <DependentUpon>frmGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmNewGame1.resx">
+      <DependentUpon>FrmNewGame1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSplash.resx">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Assets\antman\Legendary_Rules-Ant-Man.pdf" />
+    <None Include="Assets\captainamerica\Legendary-Captain-America-Rulesheet.pdf" />
+    <None Include="Assets\champions\17-marvel-legendary-champions-rules.pdf" />
+    <None Include="Assets\civilwar\Legendary_Civil_War_Rules.pdf" />
+    <None Include="Assets\core\masterminds\Legendary_Rules-Core_Set.pdf" />
+    <None Include="Assets\darkcity\Legendary_Rules-Dark_City.pdf" />
+    <None Include="Assets\deadpool\Deadpool_RulesSheet.pdf" />
+    <None Include="Assets\dimensions\Legendary_Rules-Dimensions.pdf" />
+    <None Include="Assets\fantasicfour\Fantastic-4-Rules.pdf" />
+    <None Include="Assets\fearitself\Legendary_Rules-Fear_Itself.pdf" />
+    <None Include="Assets\gotg\Legendary_Rules-Guardians_of_the_Galaxy.pdf" />
+    <None Include="Assets\mcu10\Legendary_Rules-Marvel_Studios_the_First_Ten_Years.pdf" />
+    <None Include="Assets\noir\2017_LegendaryNOIR_Rules.pdf" />
+    <None Include="Assets\paintthetownred\Legendary_Rules-Paint_The_Town_Red.pdf" />
+    <None Include="Assets\secretwars1\Legendary_Rules_Secret_Wars_v1.pdf" />
+    <None Include="Assets\secretwars2\Legendary_Rules_Secret_Wars_v2.pdf" />
+    <None Include="Assets\spidermanhomecoming\2017_Legendary_SMHC_Rules.pdf" />
+    <None Include="Assets\venom\Legendary_Rules-Venom.pdf" />
+    <None Include="Assets\villains\Legendary_Rules-Villains.pdf" />
+    <None Include="Assets\wwh\Legendary_Rules-World_War_Hulk.pdf" />
+    <None Include="Assets\xmen\2017_Legendary_XMen_Rules.pdf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\antman\Antman.jpg" />
+    <Content Include="Assets\antman\marvel-legendary-ant-man-small-box-expansion-8th-wonder-of-the-world-card.jpg" />
+    <Content Include="Assets\antman\marvel-legendary-ant-man-small-box-expansion-gigantus-card.jpg" />
+    <Content Include="Assets\antman\marvel-legendary-ant-man-small-box-expansion-ride-the-ants-card.jpg" />
+    <Content Include="Assets\antman\marvel-legendary-ant-man-small-box-expansion-tiny-winged-justice-card.jpg" />
+    <Content Include="Assets\antman\marvel-legendary-ant-man-small-box-expansion-ultron-card.jpg" />
+    <Content Include="Assets\captainamerica\captainamerica.jpg" />
+    <Content Include="Assets\captainamerica\heroes\aariel-catch-card.jpg" />
+    <Content Include="Assets\captainamerica\heroes\Agent X-13.jpg" />
+    <Content Include="Assets\captainamerica\heroes\Captain America %28Falcon%29.jpg" />
+    <Content Include="Assets\captainamerica\heroes\Captain America 1941.jpg" />
+    <Content Include="Assets\captainamerica\heroes\punch-evil-in-the-face-card.jpg" />
+    <Content Include="Assets\captainamerica\heroes\spy-network-card.jpg" />
+    <Content Include="Assets\captainamerica\heroes\Steve Rodgers, Director of S.H.I.E.L.D..jpg" />
+    <Content Include="Assets\captainamerica\heroes\Winter Soldier.jpg" />
+    <Content Include="Assets\captainamerica\mastermind\Arnim Zola.jpg" />
+    <Content Include="Assets\captainamerica\mastermind\Baron Heinrich Zemo.jpg" />
+    <Content Include="Assets\captainamerica\schemes\Brainwash the Military.jpg" />
+    <Content Include="Assets\captainamerica\schemes\Change the Outcome of WWII.jpg" />
+    <Content Include="Assets\captainamerica\schemes\The Unbreakable Enigma Code.jpg" />
+    <Content Include="Assets\captainamerica\villains\Masters of Evil %28WWII%29.jpg" />
+    <Content Include="Assets\captainamerica\villains\Zola%27s Creations %281%29.jpg" />
+    <Content Include="Assets\captainamerica\villains\Zola%27s Creations.jpg" />
+    <Content Include="Assets\champions\champions.jpg" />
+    <Content Include="Assets\champions\heroes\marvel-champions-7th-smartest-man-in-the-world-card_1.jpg" />
+    <Content Include="Assets\champions\heroes\marvel-champions-come-on-nobody-reads-card-names-card_1.jpg" />
+    <Content Include="Assets\champions\mastermind\marvel-champions-epic-fin-fang-foom-card_1.jpg" />
+    <Content Include="Assets\champions\schemes\marvel-champions-hypnotize-every-human-card_1.jpg" />
+    <Content Include="Assets\civilwar\civilwar.jpg" />
+    <Content Include="Assets\civilwar\henchman\Cape-Killers.jpg" />
+    <Content Include="Assets\civilwar\henchman\Mandroid.jpg" />
+    <Content Include="Assets\civilwar\heroes\Captain America, Secret Avenger.jpg" />
+    <Content Include="Assets\civilwar\heroes\Cloak and Dagger.jpg" />
+    <Content Include="Assets\civilwar\heroes\Daredevil %28Civil War%29.jpg" />
+    <Content Include="Assets\civilwar\heroes\Falcon.jpg" />
+    <Content Include="Assets\civilwar\heroes\Goliath.jpg" />
+    <Content Include="Assets\civilwar\heroes\Hercules.jpg" />
+    <Content Include="Assets\civilwar\heroes\Hulkling.jpg" />
+    <Content Include="Assets\civilwar\heroes\Luke Cage.jpg" />
+    <Content Include="Assets\civilwar\heroes\marvel-civil-war-trading-cards-captain-america-card.jpg" />
+    <Content Include="Assets\civilwar\heroes\marvel-civil-war-trading-cards-dual-card.jpg" />
+    <Content Include="Assets\civilwar\heroes\marvel-civil-war-trading-cards-falcon-card.jpg" />
+    <Content Include="Assets\civilwar\heroes\Patriot.jpg" />
+    <Content Include="Assets\civilwar\heroes\Peter Parker.jpg" />
+    <Content Include="Assets\civilwar\heroes\Speedball.jpg" />
+    <Content Include="Assets\civilwar\heroes\Stature.jpg" />
+    <Content Include="Assets\civilwar\heroes\Storm and Black Panther.jpg" />
+    <Content Include="Assets\civilwar\heroes\Tigra.jpg" />
+    <Content Include="Assets\civilwar\heroes\Vision.jpg" />
+    <Content Include="Assets\civilwar\heroes\Wiccan.jpg" />
+    <Content Include="Assets\civilwar\mastermind\Authoritarian Iron Man.jpg" />
+    <Content Include="Assets\civilwar\mastermind\Baron Helmut Zemo.jpg" />
+    <Content Include="Assets\civilwar\mastermind\Maria Hill, Director of S.H.I.E.L.D..jpg" />
+    <Content Include="Assets\civilwar\mastermind\Misty Knight.jpg" />
+    <Content Include="Assets\civilwar\mastermind\Ragnarok.jpg" />
+    <Content Include="Assets\civilwar\schemes\Dark Reign of H.A.M.M.E.R. Officers.jpg" />
+    <Content Include="Assets\civilwar\schemes\Imprison Unregistered Superhumans.jpg" />
+    <Content Include="Assets\civilwar\schemes\Nitro the Supervillain Threatens Crowds.jpg" />
+    <Content Include="Assets\civilwar\schemes\Predict Future Crime.jpg" />
+    <Content Include="Assets\civilwar\schemes\United States Split by Civil War.jpg" />
+    <Content Include="Assets\civilwar\std\marvel-civil-war-trading-cards-lockjaw-card.jpg" />
+    <Content Include="Assets\civilwar\villains\Great Lakes Avengers.jpg" />
+    <Content Include="Assets\civilwar\villains\Heroes For Hire.jpg" />
+    <Content Include="Assets\civilwar\villains\marvel-civil-war-trading-cards-she-hulk.jpg" />
+    <Content Include="Assets\civilwar\villains\Registration Enforcers.jpg" />
+    <Content Include="Assets\civilwar\villains\S.H.I.E.L.D. Elite.jpg" />
+    <Content Include="Assets\civilwar\villains\Superhuman Registration Act.jpg" />
+    <Content Include="Assets\civilwar\villains\Thunderbolts.jpg" />
+    <Content Include="Assets\core\henchman\doombot.jpg" />
+    <Content Include="Assets\core\henchman\mutates.jpg" />
+    <Content Include="Assets\core\henchman\ninja.jpg" />
+    <Content Include="Assets\core\henchman\sentinel.jpg" />
+    <Content Include="Assets\core\heroes\BlackWidow_co.jpg" />
+    <Content Include="Assets\core\heroes\BlackWidow_dr.jpg" />
+    <Content Include="Assets\core\heroes\BlackWidow_ma.jpg" />
+    <Content Include="Assets\core\heroes\BlackWidow_ss.jpg" />
+    <Content Include="Assets\core\heroes\CaptainAmerica_AA.jpg" />
+    <Content Include="Assets\core\heroes\CaptainAmerica_aduao.jpg" />
+    <Content Include="Assets\core\heroes\CaptainAmerica_db.jpg" />
+    <Content Include="Assets\core\heroes\CaptainAmerica_pt.jpg" />
+    <Content Include="Assets\core\heroes\Cyclops_d.jpg" />
+    <Content Include="Assets\core\heroes\Cyclops_ob.jpg" />
+    <Content Include="Assets\core\heroes\Cyclops_ue.jpg" />
+    <Content Include="Assets\core\heroes\Cyclops_xmu.jpg" />
+    <Content Include="Assets\core\heroes\Deadpool_hcigado.jpg" />
+    <Content Include="Assets\core\heroes\Deadpool_hhtfas.jpg" />
+    <Content Include="Assets\core\heroes\Deadpool_ob.jpg" />
+    <Content Include="Assets\core\heroes\Deadpool_raou.jpg" />
+    <Content Include="Assets\core\heroes\EmmaFrost_df.jpg" />
+    <Content Include="Assets\core\heroes\EmmaFrost_md.jpg" />
+    <Content Include="Assets\core\heroes\EmmaFrost_pl.jpg" />
+    <Content Include="Assets\core\heroes\EmmaFrost_st.jpg" />
+    <Content Include="Assets\core\heroes\Gambit_cs.jpg" />
+    <Content Include="Assets\core\heroes\Gambit_hc.jpg" />
+    <Content Include="Assets\core\heroes\Gambit_hsj.jpg" />
+    <Content Include="Assets\core\heroes\Gambit_std.jpg" />
+    <Content Include="Assets\core\heroes\Hawkeye_cf.jpg" />
+    <Content Include="Assets\core\heroes\Hawkeye_its.jpg" />
+    <Content Include="Assets\core\heroes\Hawkeye_qd.jpg" />
+    <Content Include="Assets\core\heroes\Hawkeye_tp.jpg" />
+    <Content Include="Assets\core\heroes\Hulk_cr.jpg" />
+    <Content Include="Assets\core\heroes\Hulk_ga.jpg" />
+    <Content Include="Assets\core\heroes\Hulk_hs.jpg" />
+    <Content Include="Assets\core\heroes\Hulk_uh.jpg" />
+    <Content Include="Assets\core\heroes\IronMan_ar.jpg" />
+    <Content Include="Assets\core\heroes\IronMan_ei.jpg" />
+    <Content Include="Assets\core\heroes\IronMan_qb.jpg" />
+    <Content Include="Assets\core\heroes\IronMan_rr.jpg" />
+    <Content Include="Assets\core\heroes\NickFury_bp.jpg" />
+    <Content Include="Assets\core\heroes\NickFury_htw.jpg" />
+    <Content Include="Assets\core\heroes\NickFury_lc.jpg" />
+    <Content Include="Assets\core\heroes\NickFury_pf.jpg" />
+    <Content Include="Assets\core\heroes\Rogue_bb.jpg" />
+    <Content Include="Assets\core\heroes\Rogue_cp.jpg" />
+    <Content Include="Assets\core\heroes\Rogue_ed.jpg" />
+    <Content Include="Assets\core\heroes\Rogue_sa.jpg" />
+    <Content Include="Assets\core\heroes\Spiderman_as.jpg" />
+    <Content Include="Assets\core\heroes\Spiderman_gr.jpg" />
+    <Content Include="Assets\core\heroes\Spiderman_tasm.jpg" />
+    <Content Include="Assets\core\heroes\Spiderman_ws.jpg" />
+    <Content Include="Assets\core\heroes\Storm_gs.jpg" />
+    <Content Include="Assets\core\heroes\Storm_lb.jpg" />
+    <Content Include="Assets\core\heroes\Storm_sc.jpg" />
+    <Content Include="Assets\core\heroes\Storm_tw.jpg" />
+    <Content Include="Assets\core\heroes\Thor_cl.jpg" />
+    <Content Include="Assets\core\heroes\Thor_got.jpg" />
+    <Content Include="Assets\core\heroes\Thor_o.jpg" />
+    <Content Include="Assets\core\heroes\Thor_sop.jpg" />
+    <Content Include="Assets\core\heroes\Wolverine_br.jpg" />
+    <Content Include="Assets\core\heroes\Wolverine_fs.jpg" />
+    <Content Include="Assets\core\heroes\Wolverine_hf.jpg" />
+    <Content Include="Assets\core\heroes\Wolverine_ks.jpg" />
+    <Content Include="Assets\core\icons\attack.png" />
+    <Content Include="Assets\core\icons\attackb.png" />
+    <Content Include="Assets\core\icons\cards.png" />
+    <Content Include="Assets\core\icons\cost.png" />
+    <Content Include="Assets\core\icons\costb.png" />
+    <Content Include="Assets\core\icons\recruit.png" />
+    <Content Include="Assets\core\icons\skills\covert.png" />
+    <Content Include="Assets\core\icons\skills\Covertb.png" />
+    <Content Include="Assets\core\icons\skills\Instinct.png" />
+    <Content Include="Assets\core\icons\skills\instinctb.png" />
+    <Content Include="Assets\core\icons\skills\range.png" />
+    <Content Include="Assets\core\icons\skills\ranged.png" />
+    <Content Include="Assets\core\icons\skills\strength.png" />
+    <Content Include="Assets\core\icons\skills\strengthb.png" />
+    <Content Include="Assets\core\icons\skills\tech.png" />
+    <Content Include="Assets\core\icons\skills\techb.png" />
+    <Content Include="Assets\core\icons\teams\1.png" />
+    <Content Include="Assets\core\icons\teams\2.png" />
+    <Content Include="Assets\core\icons\teams\3.png" />
+    <Content Include="Assets\core\icons\teams\4.png" />
+    <Content Include="Assets\core\icons\teams\5.png" />
+    <Content Include="Assets\core\icons\teams\6.png" />
+    <Content Include="Assets\core\icons\teams\autobot.png" />
+    <Content Include="Assets\core\icons\teams\avengers.png" />
+    <Content Include="Assets\core\icons\teams\Brotherhood.png" />
+    <Content Include="Assets\core\icons\teams\Cabal.png" />
+    <Content Include="Assets\core\icons\teams\Crime-Syndicate.png" />
+    <Content Include="Assets\core\icons\teams\decepticon.png" />
+    <Content Include="Assets\core\icons\teams\dinobot.png" />
+    <Content Include="Assets\core\icons\teams\fantastic-four.png" />
+    <Content Include="Assets\core\icons\teams\Foes-of-Asgard.png" />
+    <Content Include="Assets\core\icons\teams\guardians.png" />
+    <Content Include="Assets\core\icons\teams\Hydra.png" />
+    <Content Include="Assets\core\icons\teams\icons.svg" />
+    <Content Include="Assets\core\icons\teams\Illuminati.png" />
+    <Content Include="Assets\core\icons\teams\marvel-knights.png" />
+    <Content Include="Assets\core\icons\teams\predacon.png" />
+    <Content Include="Assets\core\icons\teams\Quintesson.png" />
+    <Content Include="Assets\core\icons\teams\shield.png" />
+    <Content Include="Assets\core\icons\teams\Sinister-Six.png" />
+    <Content Include="Assets\core\icons\teams\spider-friends.png" />
+    <Content Include="Assets\core\icons\teams\thunderbolts.png" />
+    <Content Include="Assets\core\icons\teams\us_army.png" />
+    <Content Include="Assets\core\icons\teams\x-force.png" />
+    <Content Include="Assets\core\icons\teams\x-men.png" />
+    <Content Include="Assets\core\icons\victory.png" />
+    <Content Include="Assets\core\masterminds\Doom.jpg" />
+    <Content Include="Assets\core\masterminds\Doom_dt.jpg" />
+    <Content Include="Assets\core\masterminds\Doom_md.jpg" />
+    <Content Include="Assets\core\masterminds\Doom_sott.jpg" />
+    <Content Include="Assets\core\masterminds\Doom_tol.jpg" />
+    <Content Include="Assets\core\masterminds\Loki.jpg" />
+    <Content Include="Assets\core\masterminds\Loki_cr.jpg" />
+    <Content Include="Assets\core\masterminds\Loki_mt.jpg" />
+    <Content Include="Assets\core\masterminds\Loki_vi.jpg" />
+    <Content Include="Assets\core\masterminds\Loki_wal.jpg" />
+    <Content Include="Assets\core\masterminds\Magneto.jpg" />
+    <Content Include="Assets\core\masterminds\Magneto_bc.jpg" />
+    <Content Include="Assets\core\masterminds\Magneto_cs.jpg" />
+    <Content Include="Assets\core\masterminds\Magneto_eb.jpg" />
+    <Content Include="Assets\core\masterminds\Magneto_xn.jpg" />
+    <Content Include="Assets\core\masterminds\RedSkull.jpg" />
+    <Content Include="Assets\core\masterminds\RedSkull_er.jpg" />
+    <Content Include="Assets\core\masterminds\RedSkull_hc.jpg" />
+    <Content Include="Assets\core\masterminds\RedSkull_ng.jpg" />
+    <Content Include="Assets\core\masterminds\RedSkull_rd.jpg" />
+    <Content Include="Assets\core\schemes\mbr.jpg" />
+    <Content Include="Assets\core\schemes\nzpb.jpg" />
+    <Content Include="Assets\core\schemes\pttdd.jpg" />
+    <Content Include="Assets\core\schemes\relwk.jpg" />
+    <Content Include="Assets\core\schemes\shcw.jpg" />
+    <Content Include="Assets\core\schemes\siotss.jpg" />
+    <Content Include="Assets\core\schemes\tlv.jpg" />
+    <Content Include="Assets\core\schemes\utpotcc.jpg" />
+    <Content Include="Assets\core\shield\agent.jpg" />
+    <Content Include="Assets\core\shield\officer.jpg" />
+    <Content Include="Assets\core\shield\trooper.jpg" />
+    <Content Include="Assets\core\std\bg.jpg" />
+    <Content Include="Assets\core\std\bystander.jpg" />
+    <Content Include="Assets\core\std\masterstrike.jpg" />
+    <Content Include="Assets\core\std\Playmat.jpg" />
+    <Content Include="Assets\core\std\schemetwist.jpg" />
+    <Content Include="Assets\core\std\wound.jpg" />
+    <Content Include="Assets\core\villains\Brotherhood_b.jpg" />
+    <Content Include="Assets\core\villains\Brotherhood_j.jpg" />
+    <Content Include="Assets\core\villains\Brotherhood_m.jpg" />
+    <Content Include="Assets\core\villains\Brotherhood_s.jpg" />
+    <Content Include="Assets\core\villains\EnemiesOfAsgard_d.jpg" />
+    <Content Include="Assets\core\villains\EnemiesOfAsgard_e.jpg" />
+    <Content Include="Assets\core\villains\EnemiesOfAsgard_fg.jpg" />
+    <Content Include="Assets\core\villains\EnemiesOfAsgard_yfgk.jpg" />
+    <Content Include="Assets\core\villains\Hydra_eaoh.jpg" />
+    <Content Include="Assets\core\villains\Hydra_hk.jpg" />
+    <Content Include="Assets\core\villains\Hydra_sh.jpg" />
+    <Content Include="Assets\core\villains\Hydra_v.jpg" />
+    <Content Include="Assets\core\villains\MastersOfEvil_bz.jpg" />
+    <Content Include="Assets\core\villains\MastersOfEvil_m.jpg" />
+    <Content Include="Assets\core\villains\MastersOfEvil_u.jpg" />
+    <Content Include="Assets\core\villains\MastersOfEvil_w.jpg" />
+    <Content Include="Assets\core\villains\Radiation_a.jpg" />
+    <Content Include="Assets\core\villains\Radiation_m.jpg" />
+    <Content Include="Assets\core\villains\Radiation_tl.jpg" />
+    <Content Include="Assets\core\villains\Radiation_z.jpg" />
+    <Content Include="Assets\core\villains\Skrulls_ptps.jpg" />
+    <Content Include="Assets\core\villains\Skrulls_sqv.jpg" />
+    <Content Include="Assets\core\villains\Skrulls_ss.jpg" />
+    <Content Include="Assets\core\villains\Skrulls_sss.jpg" />
+    <Content Include="Assets\core\villains\Spider-Foes_do.jpg" />
+    <Content Include="Assets\core\villains\Spider-Foes_gg.jpg" />
+    <Content Include="Assets\core\villains\Spider-Foes_tl.jpg" />
+    <Content Include="Assets\core\villains\Spider-Foes_v.jpg" />
+    <Content Include="Assets\darkcity\henchman\Maggia Goons.jpg" />
+    <Content Include="Assets\darkcity\henchman\Phalanx.jpg" />
+    <Content Include="Assets\darkcity\heroes\Angel.jpg" />
+    <Content Include="Assets\darkcity\heroes\Bishop.jpg" />
+    <Content Include="Assets\darkcity\heroes\Blade.jpg" />
+    <Content Include="Assets\darkcity\heroes\Cable.jpg" />
+    <Content Include="Assets\darkcity\heroes\Colossus.jpg" />
+    <Content Include="Assets\darkcity\heroes\Daredevil %28Dark City%29.jpg" />
+    <Content Include="Assets\darkcity\heroes\Domino.jpg" />
+    <Content Include="Assets\darkcity\heroes\Elektra.jpg" />
+    <Content Include="Assets\darkcity\heroes\Forge.jpg" />
+    <Content Include="Assets\darkcity\heroes\Ghost Rider.jpg" />
+    <Content Include="Assets\darkcity\heroes\Iceman.jpg" />
+    <Content Include="Assets\darkcity\heroes\Iron Fist.jpg" />
+    <Content Include="Assets\darkcity\heroes\Jean Grey.jpg" />
+    <Content Include="Assets\darkcity\heroes\Nightcrawler.jpg" />
+    <Content Include="Assets\darkcity\heroes\Professor X.jpg" />
+    <Content Include="Assets\darkcity\heroes\The Punisher.jpg" />
+    <Content Include="Assets\darkcity\heroes\Wolverine %28Dark City%29.jpg" />
+    <Content Include="Assets\darkcity\mastermind\Apocalypse.jpg" />
+    <Content Include="Assets\darkcity\mastermind\Kingpin.jpg" />
+    <Content Include="Assets\darkcity\mastermind\Mephisto.jpg" />
+    <Content Include="Assets\darkcity\mastermind\Mr. Sinister.jpg" />
+    <Content Include="Assets\darkcity\mastermind\Stryfe.jpg" />
+    <Content Include="Assets\darkcity\schemes\Capture Baby Hope.jpg" />
+    <Content Include="Assets\darkcity\schemes\Massive Earthquake Generator.jpg" />
+    <Content Include="Assets\darkcity\schemes\Steal the Weaponized Plutonium.jpg" />
+    <Content Include="Assets\darkcity\villains\Four Horsemen %281%29.jpg" />
+    <Content Include="Assets\darkcity\villains\Four Horsemen.jpg" />
+    <Content Include="Assets\darkcity\villains\Marauders %281%29.jpg" />
+    <Content Include="Assets\darkcity\villains\Marauders.jpg" />
+    <Content Include="Assets\darkcity\villains\MLF.jpg" />
+    <Content Include="Assets\darkcity\villains\Streets of New York.jpg" />
+    <Content Include="Assets\darkcity\villains\Underworld.jpg" />
+    <Content Include="Assets\deadpool\deadpool.jpg" />
+    <Content Include="Assets\deadpool\heroes\2016-upper-deck-legendary-deadpool-preview-because-bob.jpg" />
+    <Content Include="Assets\deadpool\heroes\2016-upper-deck-legendary-deadpool-preview-half-deadpool.jpg" />
+    <Content Include="Assets\deadpool\heroes\Bob, Agent of Hydra.jpg" />
+    <Content Include="Assets\deadpool\heroes\Deadpool %28Deadpool%29.jpg" />
+    <Content Include="Assets\deadpool\heroes\Slapstick.jpg" />
+    <Content Include="Assets\deadpool\heroes\Solo.jpg" />
+    <Content Include="Assets\deadpool\heroes\Stingray.jpg" />
+    <Content Include="Assets\deadpool\mastermind\Evil Deadpool.jpg" />
+    <Content Include="Assets\deadpool\mastermind\Macho Gomez.jpg" />
+    <Content Include="Assets\deadpool\villains\2016-upper-deck-legendary-deadpool-preview-because-wolverinepool.jpg" />
+    <Content Include="Assets\deadpool\villains\Evil Deadpool Corpse %281%29.jpg" />
+    <Content Include="Assets\deadpool\villains\Evil Deadpool Corpse.jpg" />
+    <Content Include="Assets\dimensions\dimensions.jpg" />
+    <Content Include="Assets\dimensions\henchman\legendary-dimensions-henchmen-villain-card.jpg" />
+    <Content Include="Assets\dimensions\heroes\legendary-dimensions-howard-the-duck-card.jpg" />
+    <Content Include="Assets\dimensions\heroes\legendary-dimensions-jessica-jones-card.jpg" />
+    <Content Include="Assets\dimensions\heroes\legendary-dimensions-man-thing-card.jpg" />
+    <Content Include="Assets\dimensions\std\legendary-dimensions-bulldozer-driver-card.jpg" />
+    <Content Include="Assets\dimensions\villain\legendary-dimensions-jonah-jameson-card2.jpg" />
+    <Content Include="Assets\fantasicfour\fantasticfour.jpg" />
+    <Content Include="Assets\fantasicfour\heroes\fantastic-four-invisible-woman-81582.jpg" />
+    <Content Include="Assets\fantasicfour\heroes\Human Torch.jpg" />
+    <Content Include="Assets\fantasicfour\heroes\human-torch-81582.jpg" />
+    <Content Include="Assets\fantasicfour\heroes\Invisible Woman.jpg" />
+    <Content Include="Assets\fantasicfour\heroes\mr-fantastic-81582.jpg" />
+    <Content Include="Assets\fantasicfour\heroes\Mr. Fantastic.jpg" />
+    <Content Include="Assets\fantasicfour\heroes\Silver Surfer.jpg" />
+    <Content Include="Assets\fantasicfour\heroes\silver-surfer-81582.jpg" />
+    <Content Include="Assets\fantasicfour\heroes\thing-81582.jpg" />
+    <Content Include="Assets\fantasicfour\heroes\Thing.jpg" />
+    <Content Include="Assets\fantasicfour\mastermind\Galactus.jpg" />
+    <Content Include="Assets\fantasicfour\mastermind\mastermind-81582.jpg" />
+    <Content Include="Assets\fantasicfour\mastermind\Mole Man.jpg" />
+    <Content Include="Assets\fantasicfour\schemes\Bathe Earth in Cosmic Rays.jpg" />
+    <Content Include="Assets\fantasicfour\schemes\Flood the Planet with Melted Glaciers.jpg" />
+    <Content Include="Assets\fantasicfour\schemes\Invincible Force Field.jpg" />
+    <Content Include="Assets\fantasicfour\schemes\Pull Reality into the Negative Zone.jpg" />
+    <Content Include="Assets\fantasicfour\villains\Heralds of Galactus.jpg" />
+    <Content Include="Assets\fantasicfour\villains\Subterranea.jpg" />
+    <Content Include="Assets\fearitself\fear-itself-greithoth-breaker-of-wills.jpg" />
+    <Content Include="Assets\fearitself\fear-itself-nerkkod-breaker-of-oceans.jpg" />
+    <Content Include="Assets\fearitself\fear-itself-nul-breaker-of-worlds.jpg" />
+    <Content Include="Assets\fearitself\fear-itself-skadi.jpg" />
+    <Content Include="Assets\fearitself\fear-itself-spiderman.jpg" />
+    <Content Include="Assets\fearitself\fearitself.jpg" />
+    <Content Include="Assets\gotg\heroes\Drax the Destroyer.jpg" />
+    <Content Include="Assets\gotg\heroes\Gamora.jpg" />
+    <Content Include="Assets\gotg\heroes\Groot.jpg" />
+    <Content Include="Assets\gotg\heroes\Rocket Raccoon.jpg" />
+    <Content Include="Assets\gotg\heroes\Star-Lord.jpg" />
+    <Content Include="Assets\gotg\mastermind\Supreme Intelligence of the Kree.jpg" />
+    <Content Include="Assets\gotg\mastermind\Thanos.jpg" />
+    <Content Include="Assets\gotg\schemes\Intergalactic Kree Nega-Bomb.jpg" />
+    <Content Include="Assets\gotg\schemes\Unite the Shards.jpg" />
+    <Content Include="Assets\gotg\villains\Infinity Gems %281%29.jpg" />
+    <Content Include="Assets\gotg\villains\Infinity Gems.jpg" />
+    <Content Include="Assets\gotg\villains\Kree Starforce.jpg" />
+    <Content Include="Assets\mcu10\heroes\legendary-marvel-studios-10th-anniversary-arc-reactor-card.jpg" />
+    <Content Include="Assets\mcu10\heroes\legendary-marvel-studios-10th-anniversary-god-of-thunder-card.jpg" />
+    <Content Include="Assets\mcu10\heroes\legendary-marvel-studios-10th-anniversary-hulk-smash-card.jpg" />
+    <Content Include="Assets\mcu10\heroes\legendary-marvel-studios-10th-anniversary-silent-sniper-card.jpg" />
+    <Content Include="Assets\mcu10\mastermind\legendary-marvel-studios-10th-anniversary-iron-monger-card.jpg" />
+    <Content Include="Assets\mcu10\mcu10.jpg" />
+    <Content Include="Assets\noir\heroes\Angel Noir.jpg" />
+    <Content Include="Assets\noir\heroes\Daredevil Noir.jpg" />
+    <Content Include="Assets\noir\heroes\Iron Man Noir.jpg" />
+    <Content Include="Assets\noir\heroes\legendary-marvel-noir-adventurers-assemble-card.jpg" />
+    <Content Include="Assets\noir\heroes\legendary-marvel-noir-solve-the-crime-card.jpg" />
+    <Content Include="Assets\noir\heroes\legendary-marvel-noir-weight-of-the-world-card.jpg" />
+    <Content Include="Assets\noir\heroes\Luke Cage Noir.jpg" />
+    <Content Include="Assets\noir\heroes\Spider-Man Noir.jpg" />
+    <Content Include="Assets\noir\noir.jpg" />
+    <Content Include="Assets\noir\schemes\Find the Split Personality Killer.jpg" />
+    <Content Include="Assets\noir\schemes\Five Families of Crime.jpg" />
+    <Content Include="Assets\noir\schemes\Hidden Heart of Darkness.jpg" />
+    <Content Include="Assets\noir\schemes\Silence the Witnesses.jpg" />
+    <Content Include="Assets\noir\std\legendary-marvel-noir-free-wolverine-promo-card.jpg" />
+    <Content Include="Assets\noir\villains\legendary-marvel-noir-the-vulture-card.jpg" />
+    <Content Include="Assets\paintthetownred\heroes\Black Cat.jpg" />
+    <Content Include="Assets\paintthetownred\heroes\Moon Knight.jpg" />
+    <Content Include="Assets\paintthetownred\heroes\Scarlet Spider.jpg" />
+    <Content Include="Assets\paintthetownred\heroes\Spider-Woman.jpg" />
+    <Content Include="Assets\paintthetownred\heroes\Symbiote Spider-Man.jpg" />
+    <Content Include="Assets\paintthetownred\mastermind\Carnage.jpg" />
+    <Content Include="Assets\paintthetownred\mastermind\Mysterio.jpg" />
+    <Content Include="Assets\paintthetownred\paintthetownred.jpg" />
+    <Content Include="Assets\paintthetownred\schemes\The Clone Saga.jpg" />
+    <Content Include="Assets\paintthetownred\schemes\Weave a Web of Lies.jpg" />
+    <Content Include="Assets\paintthetownred\villains\Maximum Carnage.jpg" />
+    <Content Include="Assets\paintthetownred\villains\Sinister Six.jpg" />
+    <Content Include="Assets\revelations\2019-legendary-revelations-marvel-deck-building-game-laser-maze-location-card.jpg" />
+    <Content Include="Assets\revelations\henchman\2019-legendary-revelations-marvel-deck-building-game-spectral-the-disintegration-beam-card.jpg" />
+    <Content Include="Assets\revelations\heroes\2019-legendary-revelations-marvel-deck-building-game-chaos-magic-scarlet-witch-card.jpg" />
+    <Content Include="Assets\revelations\heroes\2019-legendary-revelations-marvel-deck-building-game-hypersonic-cannon-war-machine.jpg" />
+    <Content Include="Assets\revelations\mastermind\2019-legendary-revelations-marvel-deck-building-game-mandarin-mastermind-card.jpg" />
+    <Content Include="Assets\revelations\revelations.jpg" />
+    <Content Include="Assets\revelations\std\2019-legendary-revelations-marvel-deck-building-game-dog-show-judge.jpg" />
+    <Content Include="Assets\secretwars1\henchman\Ghost Racers.jpg" />
+    <Content Include="Assets\secretwars1\henchman\M.O.D.O.K.S.jpg" />
+    <Content Include="Assets\secretwars1\heroes\Apocalyptic Kitty Pryde.jpg" />
+    <Content Include="Assets\secretwars1\heroes\Black Bolt.jpg" />
+    <Content Include="Assets\secretwars1\heroes\Black Panther.jpg" />
+    <Content Include="Assets\secretwars1\heroes\Captain Marvel.jpg" />
+    <Content Include="Assets\secretwars1\heroes\Dr. Strange.jpg" />
+    <Content Include="Assets\secretwars1\heroes\Lady Thor.jpg" />
+    <Content Include="Assets\secretwars1\heroes\Magik.jpg" />
+    <Content Include="Assets\secretwars1\heroes\Maximus.jpg" />
+    <Content Include="Assets\secretwars1\heroes\Namor, The Sub-Mariner.jpg" />
+    <Content Include="Assets\secretwars1\heroes\Old Man Logan.jpg" />
+    <Content Include="Assets\secretwars1\heroes\Proxima Midnight.jpg" />
+    <Content Include="Assets\secretwars1\heroes\secret-wars-marvel-team-up-card.jpg" />
+    <Content Include="Assets\secretwars1\heroes\Superior Iron Man.jpg" />
+    <Content Include="Assets\secretwars1\heroes\Thanos.jpg" />
+    <Content Include="Assets\secretwars1\heroes\Ultimate Spider-Man.jpg" />
+    <Content Include="Assets\secretwars1\mastermind\Madelyne Pryor, Goblin Queen.jpg" />
+    <Content Include="Assets\secretwars1\mastermind\Nimrod, Super Sentinel.jpg" />
+    <Content Include="Assets\secretwars1\mastermind\Wasteland Hulk.jpg" />
+    <Content Include="Assets\secretwars1\mastermind\Zombie Green Goblin.jpg" />
+    <Content Include="Assets\secretwars1\schemes\Corrupt the Next Generation of Heroes.jpg" />
+    <Content Include="Assets\secretwars1\schemes\Dark Alliance.jpg" />
+    <Content Include="Assets\secretwars1\schemes\Pan-Dimensional Plague.jpg" />
+    <Content Include="Assets\secretwars1\schemes\secret-wars-crush-them-with-my-bare-hands-card.jpg" />
+    <Content Include="Assets\secretwars1\schemes\Smash Two Dimensions Together.jpg" />
+    <Content Include="Assets\secretwars1\secret-wars-jusko-box-layout-2_1.jpg" />
+    <Content Include="Assets\secretwars1\secretwars.jpg" />
+    <Content Include="Assets\secretwars1\villains\Domain of Apocalypse.jpg" />
+    <Content Include="Assets\secretwars1\villains\Limbo %281%29.jpg" />
+    <Content Include="Assets\secretwars1\villains\Limbo.jpg" />
+    <Content Include="Assets\secretwars1\villains\Manhattan %28Earth-1610%29.jpg" />
+    <Content Include="Assets\secretwars1\villains\secret-wars-ultimate-captain-america-card.jpg" />
+    <Content Include="Assets\secretwars1\villains\Sentinel Territories.jpg" />
+    <Content Include="Assets\secretwars1\villains\The Deadlands.jpg" />
+    <Content Include="Assets\secretwars1\villains\Thor Corps.jpg" />
+    <Content Include="Assets\secretwars1\villains\Wasteland.jpg" />
+    <Content Include="Assets\secretwars2\henchman\Khonshu Guardians.jpg" />
+    <Content Include="Assets\secretwars2\henchman\Magma Men.jpg" />
+    <Content Include="Assets\secretwars2\henchman\Spider-Infected.jpg" />
+    <Content Include="Assets\secretwars2\heroes\Agent Venom.jpg" />
+    <Content Include="Assets\secretwars2\heroes\Arkon the Magnificent.jpg" />
+    <Content Include="Assets\secretwars2\heroes\Beast.jpg" />
+    <Content Include="Assets\secretwars2\heroes\Black Swan.jpg" />
+    <Content Include="Assets\secretwars2\heroes\Captain Britain.jpg" />
+    <Content Include="Assets\secretwars2\heroes\Corvus Glaive.jpg" />
+    <Content Include="Assets\secretwars2\heroes\Dr. Punisher, The Soldier Supreme.jpg" />
+    <Content Include="Assets\secretwars2\heroes\Elsa Bloodstone.jpg" />
+    <Content Include="Assets\secretwars2\heroes\legendary-secret-wars-vol-2-acrobatic-kung-fu-card.jpg" />
+    <Content Include="Assets\secretwars2\heroes\legendary-secret-wars-vol-2-multi-gun-card.jpg" />
+    <Content Include="Assets\secretwars2\heroes\Phoenix Force Cyclops.jpg" />
+    <Content Include="Assets\secretwars2\heroes\Ruby Summers.jpg" />
+    <Content Include="Assets\secretwars2\heroes\Shang-Chi.jpg" />
+    <Content Include="Assets\secretwars2\heroes\Silk.jpg" />
+    <Content Include="Assets\secretwars2\heroes\Soulsword Colossus.jpg" />
+    <Content Include="Assets\secretwars2\heroes\Spider-Gwen.jpg" />
+    <Content Include="Assets\secretwars2\heroes\The Captain and the Devil.jpg" />
+    <Content Include="Assets\secretwars2\heroes\Time-Traveling Jean Grey.jpg" />
+    <Content Include="Assets\secretwars2\matermind\Immortal Emperor Zheng Zhu.jpg" />
+    <Content Include="Assets\secretwars2\matermind\King Hyperion.jpg" />
+    <Content Include="Assets\secretwars2\matermind\legendary-secret-wars-vol-2-king-hyperion-card.jpg" />
+    <Content Include="Assets\secretwars2\matermind\Shiklah, The Demon Bride.jpg" />
+    <Content Include="Assets\secretwars2\matermind\Spider-Queen.jpg" />
+    <Content Include="Assets\secretwars2\schemes\Deadlands Hordes Charge the Wall.jpg" />
+    <Content Include="Assets\secretwars2\schemes\Enthrone the Barons of Battleworld.jpg" />
+    <Content Include="Assets\secretwars2\schemes\Master the Mysteries of Kung-Fu.jpg" />
+    <Content Include="Assets\secretwars2\schemes\Secret Wars.jpg" />
+    <Content Include="Assets\secretwars2\schemes\Sinister Ambitions.jpg" />
+    <Content Include="Assets\secretwars2\schemes\The God-Emperor of Battleworld.jpg" />
+    <Content Include="Assets\secretwars2\secretwars2.jpg" />
+    <Content Include="Assets\secretwars2\villains\Deadpool%27s Secret Secret Wars.jpg" />
+    <Content Include="Assets\secretwars2\villains\Guardians of Knowhere.jpg" />
+    <Content Include="Assets\secretwars2\villains\K%27un-Lun.jpg" />
+    <Content Include="Assets\secretwars2\villains\legendary-secret-wars-vol-2-howard-the-duck-card.jpg" />
+    <Content Include="Assets\secretwars2\villains\Monster Metropolis.jpg" />
+    <Content Include="Assets\secretwars2\villains\Utopolis.jpg" />
+    <Content Include="Assets\secretwars2\villains\X-Men %2792.jpg" />
+    <Content Include="Assets\spidermanhomecoming\heroes\marvel-legendary-spider-man-homecoming-friendly-neighborhood-high-tech-spider-man-card-87949.jpg" />
+    <Content Include="Assets\spidermanhomecoming\heroes\marvel-legendary-spider-man-homecoming-stay-out-of-trouble-tony-stark-card-87949.jpg" />
+    <Content Include="Assets\spidermanhomecoming\mastermind\marvel-legendary-spider-man-homecoming-adrian-toomes-mastermind-card-87949.jpg" />
+    <Content Include="Assets\spidermanhomecoming\spidermanhomecoming.jpg" />
+    <Content Include="Assets\spidermanhomecoming\villains\marvel-legendary-spider-man-homecoming-razor-talons-villian-card-87949.jpg" />
+    <Content Include="Assets\venom\heroes\legendary-venom-shenanigans-card.jpg" />
+    <Content Include="Assets\venom\heroes\legendary-venom-symbiotic-adaptation-card.jpg" />
+    <Content Include="Assets\venom\mastermind\legendary-venom-poison-thanos-card.jpg" />
+    <Content Include="Assets\venom\schemes\legendary-venom-maximum-carnage-card.jpg" />
+    <Content Include="Assets\venom\venom.jpg" />
+    <Content Include="Assets\venom\villains\legendary-venom-agony-card.jpg" />
+    <Content Include="Assets\wwh\worldwarhulk.jpg" />
+    <Content Include="Assets\xmen\heroes\legendary-x-men-natural-leader-card.jpg" />
+    <Content Include="Assets\xmen\heroes\legendary-x-men-radiation-focus-array-card.jpg" />
+    <Content Include="Assets\xmen\heroes\legendary-x-men-reliable-unpredicatable-dual-card.jpg" />
+    <Content Include="Assets\xmen\heroes\legendary-x-men-sonic-blastwave-card.jpg" />
+    <Content Include="Assets\xmen\legendary-x-men-animatronic-killer-clowns-card.jpg" />
+    <Content Include="Assets\xmen\std\magik-bonus-card.jpg" />
+    <Content Include="Assets\xmen\xmen.jpg" />
+    <Content Include="Data\Contents.txt" />
+    <Content Include="Data\Legendary_Core.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MSScriptControl">
+      <Guid>{0E59F1D2-1FBE-11D0-8FF2-00A0D10038BC}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Scripting">
+      <Guid>{420B2830-E718-11CF-893D-00A0C9054228}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

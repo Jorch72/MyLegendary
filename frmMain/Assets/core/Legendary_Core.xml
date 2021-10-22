@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xml>
+  <Game>
+   <title version="1.0" splash="\assets\core\std\bg.jpg">Legendary Encounters: Marvel (Core)</title>
+   <author>Jorchware 2019</author>
+  </Game>
+  <Script language="VBScript">
+   <setup>
+    <handsize>6</handsize>
+   </setup>
+   <code>
+   </code>
+  </Script>
+  <Rules name="Main Rules" type="text|html|url">
+    
+  </Rules>
+  <Zones>
+   <playmat img="\Assets\core\std\Playmat.jpg" x="0" y="0" width="842" height="600"></playmat>
+   <hand cardvisible="player" drawto="play" playable="true" discardto="discard" discardable="true" x="850" y="520" width="400" height="125" style="tile34" tiledir="right" background="0" text="Your Hand"></hand>
+   <play cardvisible="all" discardto="discard" discardable="true" x="0" y="601" width="842" height="44" style="tile34" tiledir="right" background="0" text="Played Cards"></play>
+   <deck cardvisible="back" discardto="discard" drawto="hand" refillfrom="discard" x="950" y="10" width="90" height="125" background="0"></deck>
+   <discard cardvisible="all" discardto="deck" drawto="deck" x="850" y="10" width="90" height="125" background="0" text="Discard"></discard>
+   <detail cardvisible="player" x="850" y="135" width="270" height="375" background="0" text="Detail"></detail>
+   <victorypile cardvisible="all" x="1122" y="135" width="90" height="125" background="0" text="Victory Pile"></victorypile>
+   <scheme cardvisible="all" x="35" y="155" width="90" height="125" background="0"></scheme>
+   <escaped cardvisible="all" x="145" y="190" width="125" height="90" background="0" rotate="90" style="tile" tiledir="top"></escaped>
+   <ko cardvisible="all" x="297" y="68" width="246" height="215" background="0"></ko>
+   <wounds drawto="discard" cardvisible="all" x="590" y="158" width="90" height="125" background="0"></wounds>
+   <bystanders drawto="victorypile" cardvisible="all" x="725" y="158" width="90" height="125" background="0"></bystanders>
+   <mastermind cardvisible="all" x="35" y="325" width="90" height="125" background="0"></mastermind>
+   <mastermindcaptured cardvisible="all"></mastermindcaptured>
+   <cityscape>
+    <sewers drawto="bank" cardvisible="all" killable="true" power="0" value="0" x="573" y="310" width="90" height="125" max="1"/>
+    <bank drawto="rooftops" cardvisible="all" killable="true" power="0" value="0" x="476" y="310" width="90" height="125" max="1"/>
+    <rooftops drawto="streets" cardvisible="all" killable="true" power="0" value="0" x="378" y="310" width="90" height="125" max="1"/>
+    <streets drawto="bridge" cardvisible="all" killable="true" power="0" value="0" x="280" y="310" width="90" height="125" max="1"/>
+    <bridge drawto="escaped" cardvisible="all" killable="true" power="0" value="0" x="183" y="310" width="90" height="125" max="1"/>
+   </cityscape>
+   <villaindeck drawto="sewers" cardvisible="back" x="710" y="325" width="90" height="125" background="0"></villaindeck>
+   <shield drawto="discard" cardvisible="all" buyable="true" x="35" y="475" width="90" height="125" background="0"></shield>
+   <hq drawto="discard" drawfrom="heroedeck" discardto="ko" buyable="true" cardvisible="all" x="178" y="455" width="490" height="134" background="0" style="tile" tiledir="right" max="5">
+    
+   </hq>
+   <heroedeck drawto="hq" cardvisible="back" x="710" y="475" width="90" height="125" background="0"></heroedeck>
+  </Zones>
+  <Decks>
+   <deck name="startup" loadto="deck">
+     <card name="S.H.I.E.L.D. Agent - Hero" count="8" type="startup"/>
+     <card name="S.H.I.E.L.D. Trooper - Hero" count="4" type="startup"/>
+   </deck>
+  </Decks>
+  <Cards>
+   <set name="Core" path="\assets\core\">
+     <basic>
+      <card name="Wound" img="std\wound.jpg" type="Wound" count="30"/>
+      <card name="CardBack" img="std\CardBack.jpg" type="CardBack"/>
+      <card name="Bystander" img="std\bystander.jpg" type="Bystander" value="1" count="30"/>
+      <card name="Master Strike" img="std\masterstrike.jpg" type="MasterStrike" count="5" ambush="Mastermind.MasterStrike();this.KO()"/>
+      <card name="Scheme Twist" img="std\schemetwist.jpg" type="SchemeTwist" count="11"/>
+      <card name="S.H.I.E.L.D. Agent - Hero" img="shield\agent.jpg" type="Heroe" group="SHIELD" recruit="1" count="40"/>
+      <card name="S.H.I.E.L.D. Officer - Maria Hill" img="shield\officer.jpg" type="Heroe" group="SHIELD" recruit="2" cost="3" count="30"/>
+      <card name="S.H.I.E.L.D. Trooper - Hero" img="shield\trooper.jpg" type="Heroe" group="SHIELD" power="1" count="20"/>
+     </basic>
+     <masterminds>
+      <card name="Dr. Doom - Mastermind" img="masterminds\Doom.jpg" type="Mastermind" group="Doombot Legion" power="9" value="5" masterstrike="" text="Always Leads: Doombot Legion. Master Strike: Each player with exactly 6 cards in hand reveals a [Tech] Hero or puts 2 cards from their hand on top of their deck.">
+       <card name="Dark Technology - Mastermind Tactic Dr. Doom" img="masterminds\Doom_dt.jpg" type="Tactic" power="9" value="5" text="You may recruit a [Tech] or [Range] Hero from the HQ for free."/>
+       <card name="Monarch's Decree - Mastermind Tactic Dr. Doom" img="masterminds\Doom_md.jpg" type="Tactic" power="9" value="5" text="Fight: Choose one: each other player draws a card or each other player discards a card."/>
+       <card name="Secrets of Time Travel - Mastermind Tactic Dr. Doom" img="masterminds\Doom_sott.jpg" type="Tactic" power="9" value="5" text="Fight: Take another turn after this one."/>
+       <card name="Treasures of Latveria - Mastermind Tactic Dr. Doom" img="masterminds\Doom_tol.jpg" type="Tactic" power="9" value="5" text="When you draw a new hand of cards at the end of this turn, draw  three extra cards."/>
+      </card>
+      <card name="Loki - Mastermind" img="masterminds\loki.jpg" type="Mastermind" group="Enemies of Asgard" power="10" value="5" masterstrike="" text="Always Leads: Enemies of Asgard. Master Strike: Each player reveals a [Strengt] Hero or gains a Wound.">
+       <card name="Cruel Ruler - Mastermind Tactic Loki" img="masterminds\Loki_cr.jpg" type="Tactic" power="10" value="5" text="Fight: Defeat a Villain in the City for free."/>
+       <card name="Maniacal Tyrant - Mastermind Tactic Loki" img="masterminds\Loki_mt.jpg" type="Tactic" power="10" value="5" text="Fight: KO up to four cards from your discard pile."/>
+       <card name="Vanishing Illusions - Mastermind Tactic Loki" img="masterminds\Loki_vi.jpg" type="Tactic" power="10" value="5" text="Fight: Each other player KOs a Villain from their Victory Pile."/>
+       <card name="Whispers and Lies - Mastermind Tactic Loki" img="masterminds\Loki_wal.jpg" type="Tactic" power="10" value="5" text="Fight: Each other player KOs two Bystanders from their Victory Pile."/>
+      </card>
+      <card name="Magneto - Mastermind" img="masterminds\Magneto.jpg" type="Mastermind" group="Brotherhood" power="8" value="5" masterstrike="" text="Always Leads: Brotherhood. Master Strike: Each player reveals an [X-Men] Hero or discards down to four cards.">
+       <card name="Bitter Captor - Mastermind Tactic Magneto" img="masterminds\Magneto_bc.jpg" type="Tactic" group="Brotherhood" power="8" value="5" text="Fight: Recruit an [X-Men] from the HQ for free."/>
+       <card name="Crushing Shockwave - Mastermind Tactic Magneto" img="masterminds\Magneto_cw.jpg" type="Tactic" group="Brotherhood" power="8" value="5" text="Fight: Each other player reveals an [X-Men] Hero or gains two Wounds."/>
+       <card name="Electromagnetic Bubble - Mastermind Tactic Magneto" img="masterminds\Magneto_eb.jpg" type="Tactic" group="Brotherhood" power="8" value="5" text="Fight: Choose one of your [X-Men] Heroes. When you draw a new hand of cards at the end of this turn, add that Hero to your hand as a seventh card."/>
+       <card name="Xavier's Nemesis - Mastermind Tactic Magneto" img="masterminds\Magneto_xn.jpg" type="Tactic" group="Brotherhood" power="8" value="5" text="Fight: For each of your [X-Men] Heroes, rescue a Bystander."/>
+      </card>
+      <card name="Red Skull - Mastermind" img="masterminds\RedSkull.jpg" type="Mastermind" group="Hydra" power="7" value="5" masterstrike="" text="Always Leads: HYDRA. Master Strike: Each player KOs a Hero from their Hand.">
+       <card name="Endless Resources - Mastermind Tactic Red Skull" img="masterminds\RedSkull_er.jpg" type="Tactic" group="Hydra" power="7" value="5" text="Fight: You get +4 [Recruit]."/>
+       <card name="Hydra Conspiracy - Mastermind Tactic Red Skull" img="masterminds\RedSkull_hc.jpg" type="Tactic" group="Hydra" power="7" value="5" text="Fight: Draw two cards. Then draw another card for each HYDRA Villain in your Victory Pile."/>
+       <card name="Negablast Grenades - Mastermind Tactic Red Skull" img="masterminds\RedSkull_ng.jpg" type="Tactic" group="Hydra" power="7" value="5" text="Fight: You get +3 [Attack]."/>
+       <card name="Ruthless Dictator - Mastermind Tactic Red Skull" img="masterminds\RedSkull_rd.jpg" type="Tactic" group="Hydra" power="7" value="5" text="Fight: Look at the top three cards of your deck. KO one, discard one and put one back on top of your deck."/>
+      </card>
+     </masterminds>
+     <schemes>
+      <card name="Midtown Bank Robbery" img="schemes\mbr.jpg" type="Scheme">
+       <setup>
+        <villandeck when="startup">
+         <card type="SchemeTwist" quantity="8"/>
+         <card name="Bystander" quantity="12"/>
+        </villandeck>
+       </setup>
+       <specialrules>
+        <![CDATA[
+         if(card.type=="Villan"&&card.captured.contains(card.type=="Bystander"))card.power+=card.captured.contains(card.type=="Bystander").count;
+        ]]>
+       </specialrules>
+       <twist filter="Zones/cityscape/bank[card.type=='Villain']">
+        card.captured.add("Bystander");
+        card.captured.add("Bystander");
+        Zones.villaindeck.Play();
+       </twist>
+       <evilwins filter="Zones.escaped[card.type=='Bystander']">
+        <condition>cards.count>=8;</condition>
+       </evilwins>
+       <text><![CDATA[Setup: 8 Twists. 12 Bystanders in the Villain Deck.
+       Special Rules: Each Villain gets +1 [Power] for each Bystander it has.
+       Twist: Any Villain in the Bank captures 2 Bystanders. Then play the top card of the Villain Deck.
+       Evil Wins: When 8 Bystanders are carried away by escaping Villains.]]></text>
+      </card>
+      <card name="Portals To The Dark Dimension" img="schemes\pttdd.jpg" type="Scheme">
+        <setup>
+         <villandeck when="startup">
+          <card type="SchemeTwist" quantity="7"/>
+         </villandeck>
+        </setup>
+        <twist>
+         <twist id="1">
+          <this sendto="Zones.mastermindcaptured"/>
+          Zones.mastermind.card.power+=1;
+         </twist>
+         <twist id="2">
+          <this sendto="Zones.cityscape.bridge"/>
+          Zones.cityscape.bridge.power=1;
+         </twist>
+         <twist id="3">
+          <this sendto="Zones.cityscape.streets"/>
+          Zones.cityscape.streets.power=1;
+         </twist>
+         <twist id="4">
+          <this sendto="Zones.cityscape.rooftops"/>
+          Zones.cityscape.rooftops.power=1;
+         </twist>
+         <twist id="5">
+          <this sendto="Zones.cityscape.bank"/>
+          Zones.cityscape.bank.power=1;
+         </twist>
+         <twist id="6">
+          <this sendto="Zones.cityscape.sewers"/>
+          Zones.cityscape.sewers.power=1;
+         </twist>
+        </twist>
+        <evilwins filter="Zones/villaindeck/card[type='SchemeTwist']">
+         <condition>cards.count==0;</condition>
+        </evilwins>
+        <text>
+          <![CDATA[Setup: 7 Twists. Each Twist is a Dark Portal.
+      Twist 1: Put the Dark Portal above the Mastermind. The Mastermind gets +1 [Power].
+      Twist 2-6: Put the Dark Portal in the leftmost city space that doesn't yet have a Dark Portal. Villains in that city space get +1 [Power].
+      Twist 7: Evil Wins!]]>
+       </text>
+      </card>
+      <card name="Negative Zone Prison Breakout" img="schemes\nzpb.jpg" type="Scheme">
+       <setup>
+        <villandeck when="startup">
+         <card type="SchemeTwist" quantity="8"/>
+         <group subtype="Henchman" quantity="1"/>
+        </villandeck>
+       </setup>
+       <specialrules>
+       </specialrules>
+       <twist>
+        Zones.villaindeck.Play(2);
+       </twist>
+       <evilwins filter="Zones.escaped[card.type=='Villains']">
+        <condition>cards.count>=12;</condition>
+       </evilwins>
+       <text>
+        <![CDATA[Setup: 8 Twists. Add an extra Henchman group to the Villain Deck.
+       Twist: Play the top 2 cards of the Villain Deck.
+       Evil Wins: If 12 Villains escape.]]>
+       </text>
+      </card>
+      <card name="Replace Earth's Leaders With Killbots" img="schemes\relwk.jpg" type="Scheme">
+       <setup>
+        <villandeck when="startup">
+         <card type="SchemeTwist" quantity="5"/>
+         <card name="Bystander" quantity="18" subtype="Killbot" power="Zones.mastermindcaptured.count"/>
+        </villandeck>
+        <mastermindcaptured when="startup">
+         <card type="SchemeTwist" quantity="3"/>
+        </mastermindcaptured>
+       </setup>
+       <specialrules>
+         <rule type="Killbot" power="cards.count" filter="Zones.mastermindcaptured"></rule>
+       </specialrules>
+       <twist>
+        Zones.mastermindcaptured.add(this);
+       </twist>
+       <evilwins filter="Zones.escaped[card.type=='Bystanders']">
+        <condition>cards.count>=5;</condition>
+       </evilwins>
+       <text>
+       <![CDATA[Setup: 5 Twists. 3 addtional Twists next to this Scheme. 18 total Bystanders in the Villain Deck.
+      Special Rules: Bystanders in the Villain Deck count as Killbot Villains, with [Power] equal to the number of Twists next to this Scheme.
+      Twist: Put the Twist next to this Scheme.
+      Evil Wins: If 5 "Killbots" escape.]]>
+       </text>
+      </card>
+      <card name="Super Hero Civil War" img="schemes\shcw.jpg" type="Scheme">
+       <setup>
+        <IF players.count="==2 and ==3">
+         <villandeck when="startup">
+          <card type="SchemeTwist" quantity="8"/>
+         </villandeck> 
+        </IF>
+        <IF players.count="==4 and ==5">
+         <villandeck when="startup">
+          <card type="SchemeTwist" quantity="5"/>
+         </villandeck>
+        </IF>
+        <IF players.count="==2">
+         HeroCount=4;
+        </IF>
+       </setup>
+       <twist>
+        Zones.hq.KO(-1)
+       </twist>
+       <evilwins filter="Zones.herodeck">
+        cards.count=0; 
+       </evilwins>
+       <text>
+        <![CDATA[Setup: For 2-3 players, use 8 Twists. For 4-5 players, use 5 Twists. If only 2 players, use only 4 Heroes in the Hero Deck.
+        Twist: KO all the Heroes in the HQ.
+        Evil Wins: If the Hero Deck runs out.
+        ]]> 
+       </text> 
+      </card>
+      <card name="Secret Invasion Of The Skrull Shapeshifters" img="schemes\siotss.jpg" type="Scheme">
+       <setup>
+        <herodeck when="startup" order="1">
+         HeroCount=6;
+         Zone.herodeck.shuffle();
+        </herodeck>
+        <villandeck when="startup" order="2">
+         <card type="SchemeTwist" quantity="8"/>
+         <card filter="//card[group='Skrulls']"/>
+         <card filter="//herodeck" count="12" type="Villain" group="Skrull" power="card.cost+2"/>
+        </villandeck>
+       </setup>
+       <specialrules>
+        <!--falta --> 
+       </specialrules>
+       <twist>
+        <sewers>
+         <card filter=""/> 
+        </sewers>
+       </twist>
+       <evilwins filter="Zones.escaped[card.type=='Hero']">
+        <condition>cards.count>=5;</condition>
+       </evilwins>
+       <text>
+        <![CDATA[Setup: 8 Twists, 6 Heroes. Skrull Villain Group required. Shuffle 12 random Heroes from the Hero Deck into the Villain Deck.
+        Special Rules: Heroes in the Villain Deck count as Skrull Villains with [Attack] equal to the Heroe's [Cost]+2. If you defeat that Hero, you gain it.
+        Twist: The highest cost Hero from the HQ moves into the Sewers as a Skrull Villain, as above.
+        Evil Wins: If 6 Heroes get into the Escaped Villains pile.]]>
+       </text>
+      </card>
+      <card name="The Legacy Virus" img="schemes\tlv.jpg" type="Scheme">
+       <setup>
+        <villandeck when="startup">
+         <card type="SchemeTwist" quantity="8"/>
+        </villandeck>
+        <wounds when="startup" count="6" multiply="player.count" operation="replace"/>
+       </setup>
+       <twist>
+        <discard>
+         <card name="Wound" count="1" who="All"/>
+        </discard>
+       </twist>
+       <evilwins filter="Zones.wounds">
+        cards.count=0;
+       </evilwins>
+       <text>
+        <![CDATA[Setup: 8 Twists. Wound stack holds 6 Wounds per player.
+        Twist: Each player reveals a [Tech] Heroe or gains a Wound.
+        Evil Wins: If the Wound stack runs out.]]>
+       </text>
+      </card>
+      <card name="Unleash The Power Of The Cosmic Cube" img="schemes\utpotcc.jpg" type="Scheme">
+       <setup>
+        <villandeck when="startup">
+         <card type="SchemeTwist" quantity="8"/>
+        </villandeck>
+       </setup>
+       <twist>
+        <all sendto="Zones.mastermindcaptured"/>
+        <twist id="5">
+         <discard>
+          <card name="Wound" count="1" who="All"/>
+         </discard>
+        </twist>
+        <twist id="6">
+         <discard>
+          <card name="Wound" count="1" who="All"/>
+         </discard>
+        </twist>
+        <twist id="7">
+         <discard>
+          <card name="Wound" count="3" who="All"/>
+         </discard>
+        </twist>
+       </twist>
+       <evilwins filter="Zones.mastermindcaptured">
+        <condition>cards.count==8;</condition>
+       </evilwins>
+       <text>
+        <![CDATA[Setup: 8 Twists.
+        Twist: Put the Twist next to this Scheme.
+        Twists 5-6: Each player gains a Wound.
+        Twists 7: Each player gains 3 Wounds.
+        Twists 8: Evil Winds!]]>
+       </text>
+      </card>
+     </schemes>
+     <villains>
+      <card name="Blob - Villain Brotherhood" img="Villains\Brotherhood_b.jpg" type="Villain" group="Brotherhood" power="4" value="2" target="Zone.play.card[group=='XMen']" count="2" text="You can't defeat Blob unless you have an [XMen] hero"/>
+      <card name="Juggernaut - Villain Brotherhood" img="villains\Brotherhood_j.jpg" type="Villain" group="Brotherhood" power="6" value="4" onplay="AllPlayers.discard.ko(type=='Hero',2)" onmoved="if(card.Zone==Zone.escaped)AllPlayers.hand.ko(type=='Hero',2)" count="2" text="Ambush: Each player KOs two Heroes from their discard pile. Escape: Each player KOs two Heroes from their hand."/>
+      <card name="Mystique - Villain Brotherhood" img="villains\Brotherhood_m.jpg" type="Villain" group="Brotherhood" power="5" value="3" onmove="if(card.Zone==Zone.escaped)card.subtype='SchemeTwist';card.Resolve();" count="2" text="Escape: Mystique becomes a Scheme Twist that takes effect immediately."/>
+      <card name="Sabretooth - Villain Brotherhood" img="villains\Brotherhood_s.jpg" type="Villain" group="Brotherhood" power="5" value="3" onmove="if(card.Zone==Zone.vitorypile)" count="2" text="Fight: Each player reveals an [XMen] Hero or gains a Wound. Escape: Same effect."/>
+      <card name="Destroyer - Villain Enemies of Asgard" img="villains\EnemiesOfAsgard_d.jpg" type="Villain" group="Enemies of Asgard" power="7" value="5" count="1" text="Fight: KO all your [Shield] Heroes. Escape: Each player KOs two of their Heroes."/>
+      <card name="Enchantress - Villain Enemies of Asgard" img="villains\EnemiesOfAsgard_e.jpg" type="Villain" group="Enemies of Asgard" power="6" value="4" count="2" text="Fight: Draw three cards."/>
+      <card name="Frost Giant - Villain Enemies of Asgard" img="villains\EnemiesOfAsgard_fg.jpg" type="Villain" group="Enemies of Asgard" power="4" value="2" count="3" text="Fight: Each player reveals a [Range] Heroe or gains a Wound. Escape: Same effect."/>
+      <card name="Ymir, Frost Giant King - Villain Enemies of Asgard" img="villains\EnemiesOfAsgard_yfgk.jpg" type="Villain" group="Enemies of Asgard" power="6" value="4" count="2" text="Ambush: Each player reveals a [Range] Heroe or gains a Wound. Fight: Choose a player. That player KOs any number of Wounds from their hand and discard pile."/>
+      <card name="Endless Armies of Hydra - Vallain Hydra" img="villains\Hydra_eaofh.jpg" type="Villain" group="Hydra" power="4" value="3" count="3" text="Fight: Play the top two cards of the Villain Deck."/>
+      <card name="Hydra Kidnappers - Villain Hydra" img="villains\Hydra_hk.jpg" type="Villain" group="Hydra" power="3" value="1" count="3" text="Fight: You may gain a S.H.I.E.L.D. Officer."/>
+      <card name="Supreme Hydra - Villain Hydra" img="villains\Hydra_sh" type="Villain" group="Hydra" power="6" value="3" count="1" text="Supreme HYDRA is worth +3 [Victory] for each other HYDRA Villain in your Victory Pile."/>
+      <card name="Viper - Villain Hydra" img="villains\Hydra_v.jpg" type="Villain" group="Hydra" power="5" value="3" count="1" text="Fight: Each player without another HYDRA Villain in their Victory Pile gains a Wound. Escape: Same effect."/>
+      <card name="Baron Zemo - Villain Masters of Evil" img="villains\MastersOfEvil_bz.jpg" type="Villain" group="Masters of Evil" power="6" value="4" count="2" text="Fight: For each of your [Avengers] Heroes, rescue a Bystander."/>
+      <card name="Melter - Villain Masters of Evil" img="villains\MastersOfEvil_m.jpg" type="Villain" group="Masters of Evil" power="5" value="3" count="2" text="Fight: Each  player reveals the top card of their deck. For each card, you choose to KO it or put it back."/>
+      <card name="Ultron - Villain Masters of Evil" img="villains\MastersOfEvil_u.jpg" type="Villain" group="Masters of Evil" power="6" value="2" count="2" text="Ultron is worth +1 [Victory] for each [Tech] Hero you have among all your cards at the end of the game. Escape: Each player reveals a [Tech] Hero or gains a Wound."/>
+      <card name="Whirlwind - Villain Masters of Evil" img="villains\MastersOfEvil_w.jpg" type="Villain" group="Masters of Evil" power="4" value="2" count="2" text="Fight: If you fight Whirlwind on the Rooftops or Bridge, KO two of your Heroes."/>
+      <card name="Abomination - Villain Radiation" img="villains\Radiation_a.jpg" type="Villain" group="Radiation" power="5" value="3" count="2" text="Fight: If you fight Abomintaion on the Streets or Bridge, rescue three Bystanders."/>
+      <card name="Maestro - Villain Radiation" img="villains\Radiation_m.jpg" type="Villain" group="Radiation" power="6" value="4" count="2" text="Fight: For each of your [Strength] Heroes, KO one of your Heroes."/>
+      <card name="The Leader - Villain Radiation" img="villains\Radiation_tl.jpg" type="Villain" group="Radiation" power="4" value="2" count="2" text="Ambush: Play the top card of the Villain Deck."/>
+      <card name="ZZZAX - Villain Radiation" img="villains\Radiation_z.jpg" type="Villain" group="Radiation" power="5" value="3" count="2" text="Fight: Each player reveals a [Strength] Hero or gains a Wound. Escape: Same effect."/>
+      <card name="Paibok The Power Skrull - Villain Skrulls" img="villains\Skrulls_ptps.jpg" type="Villain" group="Skrulls" power="8" value="3" count="1" text="Fight: Choose a Hero in the HQ for each player. Each player gains that Hero."/>
+      <card name="Skrull Queen Veranke - Villain Skrulls" img="villains\Skrulls_sqv.jpg" type="Villain" group="Skrulls" value="4" count="1" text="Ambush:Put the highest-cost Hero from the HQ under this Villain. This Villain's [Attack] is equal to that Heroe's [Cost]. Fight: Gain that Hero."/>
+      <card name="Super-Skrull - Villain Skrulls" img="villains\Skrulls_s.jpg" type="Villain" group="Skrulls" power="4" value="2" count="3" text="Fight: Each player KOs one of their Heroes."/>
+      <card name="Skrull Shapeshifters - Villain Skrulls" img="villains\Skrulls_ss.jpg" type="Villain" group="Skrulls" value="2" count="3" text="Ambush:Put the rightmost Hero from the HQ under this Villain. This Villain's [Attack] is equal to that Heroe's [Cost] Fight: Gain that Hero."/> 
+      <card name="Doctor Octopus - Villain Spider-Foes" img="villains\Spider-Foes_do.jpg" type="Villain" group="Spider-Foes" power="4" value="2" count="2" text="Fight: When you draw a new hand of cards at the end of this turn, draw eight cards instead of six."/>
+      <card name="Green Goblin - Villain Spider-Foes" img="villains\Spider-Foes_gg.jpg" type="Villain" group="Spider-Foes" power="6" value="4" count="2" text="Ambush: Green Goblin captures a Bystander."/>
+      <card name="The Lizard - Villain Spider-Foes" img="villains\Spider-Foes_tl.jpg" type="Villain" group="Spider-Foes" power="3" value="2" count="2" text="Fight: If you fight the Lizard in the Sewers, each other player gains a Wound."/>
+      <card name="Venom - Villain Spider-Foes" img="villains\Spider-Foes_v.jpg" type="Villain" group="Spider-Foes" power="5" value="3" count="2" text="You can't defeat Venom unless you have a [Covert] Hero. Escape: Each player gains a Wound."/>
+     </villains>
+     <henchmen>
+      <card name="Doombot Legion - Henchman Villain" img="henchman\doombot.jpg" type="Villain" subtype="henchman" group="Doombot Legion" power="3" value="1" count="10" text="Fight: Look at the top two cards of your deck. KO one of them and put the other back."/>
+      <card name="Savage Land Mutates - Henchman Villain" img="henchman\mutates.jpg" type="Villain" subtype="henchman" group="Savage Land Mutates" power="3" value="1" count="10" text="Fight: When you draw a new hand of cards at the end of this turn, draw an extra card."/>
+      <card name="Hand Ninja - Henchman Villain" img="henchman\ninja.jpg" type="Villain" subtype="henchman" group="Hand Ninja" power="3" value="1" count="10" text="Fight: You get +1 [Recruit]"/>
+      <card name="Sentinel - Henchman Villain" img="henchman\sentinel.jpg" type="Villain" subtype="henchman" group="Sentinel" power="3" value="1" count="10" text="Fight: KO one of your Heroes."/>
+     </henchmen>
+     <heroes>
+      <card name="Covert Operation - Black Widow" img="heroes\BlackWidow_co.jpg" type="Heroe" class="Covert" group="Avengers" power="0" cost="4" count="3" text="You get +1 [Power] for each Bystander in your Victory Pile."/>
+      <card name="Dangerous Rescue - Black Widow" img="heroes\BlackWidow_dr.jpg" type="Heroe" class="Covert" group="Avengers" power="2" cost="3" count="5" text="Covert: You may KO a card from your hand or discard pile. If you do, recue a Bystander."/>
+      <card name="Mission Accomplished - Black Widow" img="heroes\BlackWidow_ma.jpg" type="Heroe" class="Tech" group="Avengers" cost="2" count="5" text="Draw a card. [Tech]: Rescue a Bystander."/>
+      <card name="Silent Sniper - Black Widow" img="heroes\BlackWidow_ss.jpg" type="Heroe" class="Covert" group="Avengers" power="4" cost="7" count="1" text="Defeat a villain or Mastermind that has a Bystander."/>
+      <card name="Avengers Assemble! - Captain America" img="heroes\CaptainAmerica_aa.jpg" type="Heroe" class="Instinct" group="Avengers" power="0" cost="3" count="5" text="You get +1 [Recruit] for each color Heroe you have."/>
+      <card name="A Day Unlike Any Other - Captain America" img="heroes\CaptainAmerica_aduao.jpg" type="Heroe" class="Covert" group="Avengers" power="3" cost="7" count="1" text="[Avengers]: You get +3 [Power] for each other [Avengers] Heroe you played this turn."/>
+      <card name="Diving Block - Captain America" img="heroes\CaptainAmerica_db.jpg" type="Heroe" class="Tech" group="Avengers" power="4" cost="6" count="3" text="If you would gain a Wound, you may reveal this card and draw a card instead."/>
+      <card name="Perfect Teamwork - Captain America" img="heroes\CaptainAmerica_pt.jpg" type="Heroe" class="Strength" group="Avengers" power="0" cost="4" count="5" text="You get +1 [Power] for each color of Heroe you have."/>
+      <card name="Determination - Cyclops" img="heroes\Cyclops_d.jpg" type="Heroe" class="Strength" group="X-Men" cost="2" recruit="3" count="5" text="To play this card, you must discard a card from your hand."/>
+      <card name="Optic Blast - Cyclops" img="heroes\Cyclops_ob.jpg" type="Heroe" class="Range" group="X-Men" power="3" cost="3" count="5" text="To play this card, you must discard a card from your hand."/>
+      <card name="Unending Energy - Cyclops" img="heroes\Cyclops_ue.jpg" type="Heroe" class="Range" group="X-Men" power="4" cost="6" count="3" text="If a card effect makes you discard this card, you may return this card to your hand."/>
+      <card name="X-Men United - Cyclops" img="heroes\Cyclops_xu.jpg" type="Heroe" class="Range" group="X-Men" power="6" cost="8" count="1" text="[X-Men]: You get +2 [Attack] for each other [X-Men] Hero you played this turn."/>
+      <card name="Hey, Can I Get A Do-Over? - Deadpool" img="heroes\deadpool_hcigado.jpg" type="Heroe" class="Instinct" power="2" cost="3" count="3" text="If this is the first Hero you played this turn, you may discard the rest of your hand and draw four cards."/>
+      <card name="Here, Hold This For A Second - Deadpool" img="heroes\deadpool_hhtfas.jpg" type="Heroe" class="Tech" cost="3" recruit="2" count="5" text="A Villain of your choice captures a Bystander."/>
+      <card name="Oddball - Deadpool" img="heroes\deadpool_o.jpg" type="Heroe" class="Covert" power="2" cost="5" count="5" text="You get +1 [Attack] for each other Hero with an odd-numbered [Cost] you played this turn."/>
+      <card name="Random Acts of Unkindness - Deadpool" img="heroes\deadpool_raou.jpg" type="Heroe" class="Instinct" power="6" cost="7" count="1" text="You may gain a Wound to your hand. Then each player passes a card from their hand to the player on their left."/>
+      <card name="Diamond Form - Emma Frost" img="heroes\EmmaFrost_df.jpg" type="Heroe" class="Strength" group="X-Men" power="5" cost="7" count="1" text="Whenever you defeat a Villain or Mastermind this turn, you get +3 [Recruit]."/>
+      <card name="Mental Discipline - Emma Frost" img="heroes\EmmaFrost_md.jpg" type="Heroe" class="Range" group="X-Men" recruit="1" cost="3" count="5" text="Draw a card."/>
+      <card name="Psychic Link - Emma Frost" img="heroes\EmmaFrost_pl.jpg" type="Heroe" class="Instinct" group="X-Men" power="3" cost="5" cont="3" text="Each player may reveal another [X-Men] Hero. Each player who does draws a card."/>
+      <card name="Shadowed Thoughts - Emma Frost" img="heroes\EmmaFrost_st.jpg" type="Heroe" class="Covert" group="X-Men" power="2" cost="4" count="5" text="[Covert]: You may play the top card of the Villain Deck. If you do, you get +2 [Attack]."/>
+      <card name="Card Shark - Gambit" img="heroes\Gambit_cs.jpg" type="Heroe" class="Range" group="X-Men" power="2" cost="4" count="5" text="Reveal the top card of your deck. If it's an [X-Men] Hero, draw it."/>
+      <card name="Hypnotic Shark - Gambit" img="heroes\Gambit_hc.jpg" type="Heroe" class="Instinct" group="X-Men" recruit="2" cost="3" count="3" text="Reveal the top card of your deck. Discard it or put it back. [Instinct]: Do the same thing to each other player's deck."/>
+      <card name="High Stakes Jackpot - Gambit" img="heroes\Gambit_hsj.jpg" type="Heroe" class="Instinct" group="X-Men" power="4" cost="7" count="1" text="Reveal the top card of your deck. You get +[Attack] equal to that card's cost."/>
+      <card name="Stack The Deck - Gambit" img="heroes\Gambit_std.jpg" type="Heroe" class="Covert" group="X-Men" cost="2" count="5" text="Draw two cards. Then put a card from your hand on top of your deck."/>
+      <card name="Covering Fire - Hawkeye" img="heroes\Hawkeye_cf.jpg" type="Heroe" class="Tech" group="Avengers" power="3" cost="5" count="3" text="[Tech]: Choose one: each other player draws a card or each other player discards a card."/>
+      <card name="Impossible Trick Shot - Hawkeye" img="heroes\Hawkeye_its.jpg" type="Heroe" class="Tech" group="Avengers" power="5" cost="7" count="1" text="Whenever you defeat a Villain or Mastermind this turn, rescue three Bystanders."/>
+      <card name="Quick Draw - Hawkeye" img="heroes\Hawkeye_qd.jpg" type="Heroe" class="Instinct" group="Avengers" power="1" cost="3" count="5" text="Draw a card."/>
+      <card name="Team Player - Hawkeye" img="heroes\Hawkeye_tp.jpg" type="Heroe" class="Tech" group="Avengers" power="2" cost="4" count="5" text="[Avengers]: You get +1 [Attack]."/>
+      <card name="Crazed Rampage - Hulk" img="heroes\Hulk_cr.jpg" type="Heroe" class="Strength" group="Avengers" power="4" cost="5" count="3" text="Each player gains a Wound."/>
+      <card name="Growing Anger - Hulk" img="heroes\Hulk_ga.jpg" type="Heroe" class="Strength" group="Avengers" power="2" cost="3" count="5" text="[Strength]: You get +1 [Attack]."/>
+      <card name="Hulk Smash - Hulk" img="heroes\Hulk_hs.jpg" type="Heroe" class="Strength" group="Avengers" power="5" cost="8" coun="1" text="[Strength]: You get +5 [Attack]."/>
+      <card name="Unstoppable Hulk - Hulk" img="heroes\Hulk_uh.jpg" type="Heroe" class="Instinct" group="Avengers" power="2" cost="4" count="5" text="You may KO a Wound from your hand or discard pile. If you do, you get +2 [Attack]."/>
+      <card name="Arc Reactor - Iron Man" img="heroes\IronMan_ar.jpg" type="Heroe" class="Tech" group="Avengers" power="3" cost="5" count="3" text="[Tech]: You get +1 for each other [Tech] Heroe you played this turn."/>
+      <card name="Endless Invention - Iron Man" img="heroes\IronMan_ei.jpg" type="Heroe" class="Tech" group="Avengers" cost="3" count="5" text="Draw a card. [Tech]: Draw another card."/>
+      <card name="Quantum Breakthrough - Iron Man" img="heroes\IronMan_qb.jpg" type="Heroe" class="Tech" group="Avengers" cost="7" count="1" text="Draw two cards. [Tech]: Draw two more cards."/>
+      <card name="Repulsor Rays - Iron Man" img="heroes\IronMan_rr.jpg" type="Heroe" class="Range" group="Avengers" power="2" cost="3" count="5" text="[Range]: You get +1 [Attack]."/> 
+      <card name="Battlefield Promotion - Nick Fury" img="heroes\NickFury_bp.jpg" type="Heroe" class="Covert" group="Shield" cost="4" count="5" text="You may KO a [Shield] Hero from your hand or discard pile. If you do, you may gain a S.H.I.E.L.D. Officer to your hand."/>
+      <card name="High Tech Weaponry - Nick Fury" img="heroes\NickFury_htw.jpg" type="Heroe" class="Tech" group="Shield" power="2" cost="3" count="5" text="[Tech]: You get +1 [Attack]."/>
+      <card name="Legendary Commander - Nick Fury" img="heroes\NickFury_lc.jpg" type="Heroe" class="Strength" group="Shield" power="1" cost="6" count="3" text="You get +1 [Attack] for each other [Shield] Hero you played this turn."/>
+      <card name="Pure Fury - Nick Fury" img="heroes\NickFury_pf.jpg" type="Heroe" class="Tech" group="Shield" cost="8" count="1" text="Defeat any Villain or Mastermind whose [Attack] is less than the number of [Shield] Heroes in the KO pile."/>
+      <card name="Burrowed Brawn - Rogue" img="heroes\Rogue_bb.jpg" type="Heroe" class="Strength" group="X-Men" power="1" cost="4" count="5" text="[Strength]: You get +3 [Attack]."/>
+      <card name="Copy Powers - Rogue" img="heroes\Rogue_cp.jpg" type="Heroe" class="Covert" group="X-Men" cost="5" count="3" text="Play this card as a copy of another Hero you played this turn. This card is both [Covert] and the color you copy."/>
+      <card name="Energy Drain - Rogue" img="heroes\Rogue_ed.jpg" type="Heroe" class="Covert" group="X-Men" power="2" cost="3" count="5" text="[Covert]: You may KO a card from your hand or discard pile. If you do, you get +1 [Recruit]."/>
+      <card name="Steal Abilities - Rogue" img="heroes\Rogue_sa.jpg" type="Heroe" class="Strength" group="X-Men" power="4" cost="8" count="1" text="Each player discards the top card of their deck. Play a copy of each of those cards."/>
+      <card name="Astonishing Strength - Spiderman" img="heroes\Spiderman_as.jpg" type="Heroe" class="Strength" group="Spider" cost="2" recruit="1" count="5" text="Reveal the top card of your deck. If that card costs 2 [Cost] or less, draw it."/>
+      <card name="Great Responsibility - Spiderman" img="heroes\Spiderman_gr.jpg" type="Heroe" class="Instinct" group="Spider" power="1" cost="2" count="5" text="Reveal the top card of your deck. If that card costs 2 [Cost] or less, draw it."/>
+      <card name="The Amazing Spider-man - Spiderman" img="heroes\Spiderman_tas.jpg" type="Heroe" class="Covert" group="Spider" cost="2" count="1" text="Reveal the top three cards of your deck. Put any that cost 2 [Cost] or less, into your hand. Put the rest back in any order."/>
+      <card name="Web-Shooters - Spiderman" img="heroes\Spiderman_w.jpg" type="Heroe" class="Tech" group="Spider" cost="2" count="3" text="Rescue a Bystander. Reveal the top card of your deck. If that card costs 2 [Cost] or less, draw it."/>       
+      <card name="Gathering Stormclouds - Storm" img="heroes\Storm_gs.jpg" type="Heroe" class="Range" group="X-Men" cost="3" recruit="2" count="5" text="[Range]: Draw a card."/>
+      <card name="Lightning Bolt - Storm" img="heroes\Storm_lb.jpg" type="Heroe" class="Range" group="X-Men" power="2" cost="4" count="5" text="Any Villain you fight on the Rooftops this turn gets -2 [Attack]."/>
+      <card name="Spinning Cyclone - Storm" img="heroes\Storm_sc.jpg" type="Heroe" class="Range" group="X-Men" power="4" cost="6" count="3" text="You may move a Villain to a new city space. Rescue any Bystanders captured by that Villain. (If you move a Villain to a city space that already has a Villain, swap them.)"/>
+      <card name="Tidal Wave - Storm" img="heroes\Storm_tw.jpg" type="Heroe" class="Range" group="X-Men" power="5" cost="7" count="1" text="Any Villain you fight on the Bridge this turn gets -2 [Attack]. [Range]: The Mastermind gets -2 [Attack] this turn."/>
+      <card name="Call Lightning - Thor" img="heroes\Thor_cl.jpg" type="Heroe" class="Range" group="Avengers" power="3" cost="6" count="3" text="[Range]: You get +3 [Attack]."/>
+      <card name="God of Thunder - Thor" img="heroes\Thor_got.jpg" type="Heroe" class="Range" group="Avengers" recruit="5" cost="8" count="1" text="You can use [Recruit] as [Attack] this turn."/>
+      <card name="Odinson - Thor" img="heroes\Thor_o.jpg" type="Heroe" class="Strength" group="Avengers" recruit="2" cost="3" count="5" text="[Strength]: You get +2 [Recruit]."/>
+      <card name="Surge of Power - Thor" img="heroes\Thor_sop.jpg" type="Heroe" class="Range" group="Avengers" recruit="2" cost="4" count="5" text="If you made 8 or more [Recruit] this turn, you get +3 [Attack]."/>   
+      <card name="Beserker Rage - Wolverine" img="heroes\Wolverine_bs.jpg" type="Heroe" class="Instinct" group="X-Men" power="0" cost="8" count="1" text="Draw 3 cards. [Instinct]: You get +1 [Attack] for each extra card you've drawn this turn."/>
+      <card name="Frenzied Slashing - Wolverine" img="heroes\Wolverine_fs.jpg" type="Heroe" class="Instinct" group="X-Men" power="2" cost="5" count="3" text="[Instinct]: Draw two cards."/>
+      <card name="Healing Factor - Wolverine" img="heroes\Wolverine_hf.jpg" type="Heroe" class="Instinct" group="X-Men" power="2" cost="3" count="5" text="You may KO a Wound from your hand or discard pile. If you do, draw a card."/>
+      <card name="Keen Senses - Wolverine" img="heroes\Wolverine_ks.jpg" type="Heroe" class="Instinct" group="X-Men" power="1" cost="2" count="5" text="Draw a card."/>
+     </heroes>
+   </set>
+  </Cards>
+</xml>

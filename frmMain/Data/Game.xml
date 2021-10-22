@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xml>
+ <Game>
+  <title>Legendary Encounters: Marvel</title>
+  <data>\assets\core\Legendary_Core.xml</data>
+  <Expansions>
+   <Expansion title="Marvel Core" data="\assets\core\Legendary_Core.xml"/>
+   <Expansion title="Dark City" />
+   <Expansion title="Fantastic Four" />
+   <Expansion title="Paint the Town Red" />
+   <Expansion title="Guardians of the Galaxy" />
+   <Expansion title="Secret Wars 1" />
+   <Expansion title="Secret Wars 2" />
+   <Expansion title="Captain America" />
+   <Expansion title="Civil War" />
+   <Expansion title="Deadpool" />
+   <Expansion title="Noir" />
+   <Expansion title="X-Men" />
+   <Expansion title="Spiderman Homecoming" />
+   <Expansion title="Champions" />
+   <Expansion title="World War Hulk" />
+   <Expansion title="MCU 10 Years" />
+   <Expansion title="Antman" />
+   <Expansion title="Venom" />
+   <Expansion title="Dimensions" />
+   <Expansion title="Revelations" />
+   <Expansion title="Shield" />
+   <Expansion title="New Mutants" />
+   <Expansion title="Heroes of Asgard" />
+   <Expansion title="Into the Cosmos" />
+   <Expansion title="Realm of Kings" />
+   <Expansion title="Annihilation" />
+   <Expansion title="Dream Cards" />
+   <Expansion title="Villains" />
+   <Expansion title="Fear Itself" />
+  </Expansions>
+ </Game>
+ <Game>
+  <title>Legendary Encounters: Villains</title>
+  <Expansions>
+   <Expansion title="Fear Itself" />
+  </Expansions>
+ </Game>
+ <Game>
+  <title>Legendary Encounters: Aliens</title>
+  <Expansions>
+   <Expansion title="Alien Expansion" />
+   <Expansion title="Covenant" />
+  </Expansions>
+ </Game>
+ <Game>
+  <title>Legendary Encounters: Predator</title>
+ </Game>
+ <Game>
+  <title>Legendary Encounters: James Bond</title>
+ </Game>
+ <Game>
+  <title>Legendary Encounters: Buffy</title>
+ </Game>
+ <Game>
+  <title>Legendary Encounters: Big Trouble in Little China</title>
+ </Game>
+  <Game>
+  <title>Legendary Encounters: Firefly</title>
+ </Game>
+ <Game>
+  <title>Legendary Encounters: X-Files (N/A)</title>
+ </Game>
+</xml>
